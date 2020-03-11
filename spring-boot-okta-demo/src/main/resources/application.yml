@@ -1,6 +1,26 @@
-server.port= 9090
+server:
+  port: 9090
+  servlet:
+    session:
+      cookie:
+        name: OSESSION
 
-okta.oauth2.issuer=https://dev-215767.okta.com/oauth2/default
-okta.oauth2.clientId=0oa35e0qyzb6HNcTO4x6
-okta.oauth2.clientSecret=C14KcpdAp29pj1-6C-ZhK6TM2SdlU1izUpza82z_
+# 1) Custom authorization server
+security:
+  oauth2:
+    client:
+      client-id: myClient
+      client-secret: mySecret
+      user-authorization-uri: http://localhost:8282/oauth/authorize
+      access-token-uri: http://localhost:8282/oauth/token
+    resource:
+      token-info-uri: http://localhost:8282/oauth/check_token
+
+# 2) Okta authorization server
+#okta:
+#  oauth2:
+#    issuer: https://dev-215767.okta.com/oauth2/default
+#    clientId: 0oa35e0qhfkdffkdg6HNcdkjgd4x6
+#    clientSecret: ASDFdlgdlvlfv-6C-ZhK6TM2SdlU1izUpza82z_
+
 

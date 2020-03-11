@@ -1,0 +1,9 @@
+server:
+  port: 8283
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8282/oauth/check_token
+    client:
+      client-id: myClient1
+      client-secret: mySecret

@@ -1,4 +1,22 @@
-server.port=8081
-# to override default behaviour
-#spring.security.user.name=user
-#spring.security.user.password=password
+security:
+  oauth2:
+    client:
+      clientId:
+      clientSecret:
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authorizationSchema: query
+      clientAuthenticationSchema: form
+    resource:
+      userInfoUri: https://graph.facebook.com/me
+#    client:
+#      clientId: 
+#      clientSecret: 
+#      accessTokenUri: https://github.com/login/oauth/access_token
+#      userAuthorizationUri: https://github.com/login/oauth/authorize
+#      tokenName: oauth_token
+#      authorizationSchema: query
+#      clientAuthenticationSchema: form
+#      resource:
+#        userInfoUri: https://api.github.com/user
