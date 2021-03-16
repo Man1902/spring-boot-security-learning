@@ -52,15 +52,15 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .redirectUris("http://localhost:9090/login")
                 .scopes("READ", "WRITE")
                 .authorizedGrantTypes("authorization_code", "refresh_token", "password")
-                .accessTokenValiditySeconds(30)
-                .refreshTokenValiditySeconds(60)
+                .accessTokenValiditySeconds(60)
+                .refreshTokenValiditySeconds(60*60)
                 .and()
                 .withClient("myClient1").secret(passwordEncoder.encode("mySecret"))
                 .redirectUris("http://localhost:8284/login")
                 .scopes("READ", "WRITE")
                 .authorizedGrantTypes("authorization_code", "refresh_token", "password")
-                .accessTokenValiditySeconds(30)
-                .refreshTokenValiditySeconds(60);
+                .accessTokenValiditySeconds(60)
+                .refreshTokenValiditySeconds(60*60);
 
     }
 
